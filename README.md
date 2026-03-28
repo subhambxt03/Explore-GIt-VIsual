@@ -43,7 +43,7 @@ It provides profile information, repository analytics, language distribution, co
 ```md
 ## Screenshot
 
-![Project Screenshot](src/assets/screenshot.png)
+![Project Screenshot](screenshot.png)
 
 ---
 
