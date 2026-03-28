@@ -39,11 +39,11 @@ It provides profile information, repository analytics, language distribution, co
 
 ---
 
+
+```md
 ## Screenshot
 
-```md id="hrnck7"
 ![Project Screenshot](src/assets/screenshot.png)
-```
 
 ---
 
