@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 font-sans antialiased;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    @apply min-h-screen;
+  }
+  
+  /* Dark mode text colors - using direct colors instead of @apply to avoid circular dependencies */
+  .dark {
+    color-scheme: dark;
+  }
+  
+  .dark body {
+    color: white;
+  }
+  
+  /* Ensure all text elements inherit proper colors in dark mode */
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+  .dark p, .dark span, .dark li, .dark a,
+  .dark label, .dark input, .dark textarea, .dark select,
+  .dark div:not(.gradient-text) {
+    color: white;
+  }
+  
+  /* Keep specific elements with proper colors - using direct color values */
+  .dark .text-gray-500 {
+    color: #9ca3af !important;
+  }
+  
+  .dark .text-gray-600 {
+    color: #9ca3af !important;
+  }
+  
+  .dark .text-gray-700 {
+    color: #d1d5db !important;
+  }
+  
+  .dark .text-gray-800 {
+    color: #e5e7eb !important;
+  }
+  
+  .dark .text-gray-900 {
+    color: #f3f4f6 !important;
+  }
+  
+  .dark .text-gray-400 {
+    color: #9ca3af !important;
+  }
+  
+  .dark .glass-card {
+    background-color: rgba(31, 41, 55, 0.8);
+    border-color: rgba(55, 65, 81, 0.5);
+  }
+  
+  /* Input fields in dark mode */
+  .dark input, .dark select, .dark textarea {
+    background-color: #1f2937;
+    color: white;
+    border-color: #374151;
+  }
+  
+  .dark input::placeholder, .dark textarea::placeholder {
+    color: #9ca3af;
+  }
+  
+  /* Link colors in dark mode */
+  .dark a:not(.gradient-text) {
+    color: #c084fc;
+  }
+  
+  .dark a:not(.gradient-text):hover {
+    color: #a855f7;
+  }
+  
+  /* Button text in dark mode */
+  .dark button {
+    color: white;
+  }
+  
+  /* Chart text colors in dark mode */
+  .dark .chartjs-text {
+    color: white;
+  }
+  
+  /* Card text in dark mode */
+  .dark .glass-card p,
+  .dark .glass-card span,
+  .dark .glass-card div:not(.gradient-text) {
+    color: #e5e7eb;
+  }
+  
+  .dark .glass-card .text-gray-500,
+  .dark .glass-card .text-gray-600,
+  .dark .glass-card .text-gray-700 {
+    color: #9ca3af !important;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+  }
+}
+
+/* Custom scrollbar - Mobile First */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200 dark:bg-gray-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-400;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .glass-card {
+    @apply rounded-xl shadow-md;
+  }
+  
+  button, 
+  [role="button"],
+  input,
+  select {
+    @apply text-sm;
+    min-height: 44px; /* Better touch targets */
+  }
+  
+  /* Improve touch targets on mobile */
+  a, button, [role="button"] {
+    @apply cursor-pointer;
+    touch-action: manipulation;
+  }
+}
+
+/* Prevent text overflow */
+.truncate-text {
+  @apply truncate;
+  max-width: 100%;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-purple-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-900;
+}
