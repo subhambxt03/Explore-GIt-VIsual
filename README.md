@@ -39,13 +39,11 @@ It provides profile information, repository analytics, language distribution, co
 
 ---
 
-
-```md
 ## Screenshot
 
-![Project Screenshot](screenshot.png)
-
----
+<p align="center">
+  <img src="screenshot.png" width="900"/>
+</p>
 
 ## Tech Stack
 
