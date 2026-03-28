@@ -42,7 +42,7 @@ It provides profile information, repository analytics, language distribution, co
 ## Screenshot
 
 ```md id="hrnck7"
-![Project Screenshot](./src/assets/screenshot.png)
+![Project Screenshot](src/assets/screenshot.png)
 ```
 
 ---
